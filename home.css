@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    transition: all 300ms;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+a{
+    cursor: pointer;
+}
+body{
+    background-color: var(--backgroundColor);
+}
+                                /* Theme */
+:root{
+    --fontColor: #212121;
+    --backgroundColor: #edf2fc;
+}
+.dark-theme{
+    --backgroundColor: black;
+    --fontColor: rgb(255, 255, 255);
+}
+.page1{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--backgroundColor);
+    color: var(--fontColor);
+}
+.page2{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--backgroundColor);
+    color: var(--fontColor);
+}
+                                /* Navbar */
+header{
+    height: 90px;
+    width: 100%;
+    /* background-color: rgba(144, 238, 144, 0.514); */
+    border-bottom: 2px solid var(--fontColor);
+}
+#icon{
+    width: 40px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+#icon:hover{
+    scale: 1.2;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img{
+    margin-top: 5px;
+    width: 110px;
+    height: 100px;
+    margin-left: 20px;
+    transition: all 300ms;
+}
+.logo img:hover{
+    scale: 1.2;
+}
+.nav-list ul{
+    position: absolute;
+    display: flex;
+    /* margin-top: 30px; */
+    gap: 30px;
+}
+.nav-list ul li{
+    list-style: none;
+}
+.nav-list ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 300ms;
+    /* color: #1D0066; */
+    color: var(--fontColor);
+    position: relative;
+}
+.nav-list ul li a::after{
+    content: " ";
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    background-color: teal;
+    transition: 0.3s ease-in-out;
+    transform: scaleX(0);
+}
+.nav-list ul li a:hover::after{
+    transform: scaleX(1);
+}
+.nav-list ul li a:hover{
+    color: orangered;
+}
+.nav-list ul li:nth-child(1).active ~ .slider{
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+.nav-list ul li:nth-child(2).active ~ .slider{
+    left: 100px;
+    opacity: 1;
+    z-index: 1;
+}
+.nav-list ul li:nth-child(3).active ~ .slider{
+    left: 215px;
+    opacity: 1;
+    z-index: 1;
+}
+.nav-list ul li:nth-child(4).active ~ .slider{
+    left: 325px;
+    opacity: 1;
+    z-index: 1;
+}
+.search{
+    margin-right: 20px;
+    /* margin-top: 30px; */
+}
+.search .query{
+    border-radius: 20px;
+    border: none;
+    height: 25px;
+}
+.query:focus{
+    border: 1px solid gray;
+}
+.query::placeholder{
+    padding-left: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+.search-box-input{
+    margin-top: 5px;
+    position: relative;
+    left: 1360px;
+    display: inline-block;
+}
+.btn{
+    position: absolute;
+    left: 135px;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+}
+.fa-solid{
+    color: black;
+    font-weight: bold;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.banner{
+    position: relative;
+    min-height: 50vh;
+    width: max-content;
+    margin: auto;
+    /* background-color: lightskyblue; */
+}
+#banner-top img{
+    margin-top: 20px;
+    /* margin-left: 33%; */
+    margin-bottom: 10px;
+    height: 50vh;
+    border-radius: 25px;
+}
+.sports{
+    transition: all 300ms;
+    margin-top: 20px;
+    min-height: 50vh;
+    /* background-color: lightpink; */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.sports1{
+    display: flex;
+    gap: 30px;
+    transition: all 300ms;
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.sports2{
+    display: flex;
+    gap: 30px;
+    transition: all 300ms;
+    margin-left: 20%;
+    margin-bottom: 30px;
+}
+.games{
+    transition: all 300ms;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 309px;
+    height: 275px;
+    transition: all 300ms;
+    position: relative;
+    box-shadow: 10px 10px 5px gray;
+}
+.games img{
+    width: 309px;
+    height: 275px;
+    border-radius: 20px;
+    transition: all 300ms;
+    object-fit: cover;
+}
+.games #sport-text{
+    transition: all 300ms;
+    display: none;
+    /* opacity: 0; */
+    padding: 7px;
+    text-align: justify;
+    font-size: 13px;
+    position: absolute;
+    border-radius: 20px;
+}
+#sport-text a{
+    font-weight: bold;
+}
+.games>img:hover{
+    transition: all 300ms;
+    display: none;
+}
+.games>img:hover~#sport-text{
+    transition: all 300ms;
+    display: block;
+}
+.kabaddi>#sport-text{
+    line-height: 1.2;
+}
+#preloader{
+    background: black url(images/preloader_lifting.gif)  no-repeat center;
+    height: 100vh;
+    width: 100%;
+    background-size: 20%;
+    position: fixed;
+    z-index: 100;
+}
+hr{
+    height: 5px;
+    width: 60%;
+    margin: auto;
+    background-color: black;
+}
+hr:hover{
+    width: 95%;
+}
+                                    /* Workout Section */
+.workout{
+    position: relative;
+}
+.workout-category{
+    margin-top: 10px;
+    min-height: 50vh;
+    width: 100%;
+    /* background-color: lightsalmon; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 5%; */
+}
+.men{
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+.men .img img{
+    width: 50vh;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+.men .paragraph{
+    margin-left: 28px;
+}
+.women{
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.women .img img{
+    width: 50vh;
+    height: 40vh;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+.children{
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.children .img img{
+    width: 50vh;
+    height: 40vh;
+    border-radius: 30px;
+    border: 2px solid black;
+}
+.children .paragraph{
+    margin-left: 28px;
+}
+.workout-category img:hover{
+    scale: 1.2;
+}
+                    /* Workout Banner with button */
+.bannerbtn{
+    height: 50vh;
+    background-image: url(images/get\ ready\ to\ fit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.workout-btn{
+    margin-left: 45%;
+    margin-top: 20%;
+    padding: 10px;
+    font-family: "Permanent Marker", cursive;
+    font-size: 18px;
+    border-radius: 25px;
+    background: var(--backgroundColor);   
+    color: var(--fontColor);
+    border: none;
+    cursor: pointer;
+}
+.workout-btn:hover{
+    color: white;
+    background-color: black;
+}
+.sport-banner{
+    margin-top: 30px;
+    height: 50vh;
+    background-image: url(images/ExerciseKaro_Banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.explore{
+    margin-left: 46%;
+    margin-top: 19%;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    background: var(--backgroundColor);  
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none;
+    color: var(--fontColor); 
+}
+.explore:hover{
+    color: white;
+    background-color: black;
+}
+#more{
+    margin-left: 50%;
+    margin-bottom: 10px;
+}
+#more a{
+    text-decoration: none;
+    padding: 10px;
+    font-family: "Permanent Marker", cursive;
+    color: var(--fontColor);
+}
+#more a:hover{
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+/* mobile screen */
+
+@media screen and (max-width: 803px){
+    *{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .logo img{
+        width: 50px;
+        height: auto;
+        margin-top:  4%;
+    }
+    .nav-list ul li a{
+        font-size: 12px;
+    }
+    .nav-list ul{
+        gap: 10px;
+        margin-left: -20%;
+    }
+    #icon{
+        width: 30px;
+    }
+}
